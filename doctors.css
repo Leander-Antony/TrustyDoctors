@@ -54,6 +54,8 @@ nav ul li a {
     margin-left: 20px;
 }
 
+
+
 .doctor-listing {
     display: flex;
     margin-top: 40px;
@@ -126,4 +128,72 @@ aside {
     background-color: #28a745;
     border-radius: 50%;
     margin-right: 8px;
+}
+
+footer {
+    background-color: #fff;
+    padding: 40px 0;
+    border-top: 1px solid #ddd;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-logo {
+    width: 30%;
+}
+
+.footer-logo h2 {
+    color: #2b5eff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.footer-logo p {
+    color: #666;
+    font-size: 14px;
+}
+
+.footer-links {
+    width: 20%;
+}
+
+.footer-links h4 {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.footer-links ul {
+    list-style-type: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-contact {
+    width: 20%;
+}
+
+.footer-contact h4 {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.footer-contact p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
 }
