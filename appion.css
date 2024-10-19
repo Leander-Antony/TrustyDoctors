@@ -2,15 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
-    background-color: #f8f9fd;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
 }
 
 .container {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -21,94 +21,113 @@ header {
     padding: 20px 0;
 }
 
-.logo h1 {
-    font-size: 28px;
-    color: #2b5eff;
+.logo {
+    font-size: 24px;
+    color: #333;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     display: flex;
-    gap: 20px;
 }
 
 nav ul li {
+    margin-right: 50px;
+}
+
+nav ul li a, .admin-btn {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.create-account-btn, .admin-btn {
+    background-color: #5865F2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.doctor-card {
+    background-color: white;
+    display: flex;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.doctor-image img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+.doctor-info {
+    margin-left: 30px;
+    flex: 1;
+}
+
+.doctor-info h2 {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.verified-badge {
+    font-size: 16px;
+    color: blue;
+    margin-left: 10px;
+}
+
+.doctor-info .experience {
+    font-size: 14px;
+    color: gray;
+    margin-left: 10px;
+}
+
+.about {
+    margin: 10px 0;
+    color: gray;
+}
+
+.fee {
+    margin-bottom: 10px;
     font-size: 18px;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #000;
+.booking h3 {
+    margin-bottom: 10px;
 }
 
-.admin-btn, .create-account-btn {
-    background-color: #2b5eff;
-    color: white;
+.date-selector, .time-selector {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.date, .time-slot {
+    background-color: #eee;
+    padding: 10px 15px;
+    margin-right: 10px;
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.create-account-btn {
-    margin-left: 20px;
+.date.active {
+    background-color: #5865F2;
+    color: white;
 }
 
-.contact-section {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contact-section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.highlight {
-    color: #2b5eff;
-}
-
-.contact-content {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    margin-bottom: 60px;
-}
-
-.contact-content img {
-    width: 400px;
-    height: auto;
-    border-radius: 10px;
-}
-
-.contact-info {
-    max-width: 500px;
-}
-
-.contact-info h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.contact-info p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.explore-jobs-btn {
-    background-color: white;
-    border: 2px solid #000;
+.book-btn {
+    background-color: #5865F2;
+    color: white;
     padding: 10px 20px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
 }
-
 footer {
     background-color: #fff;
     padding: 40px 0;
