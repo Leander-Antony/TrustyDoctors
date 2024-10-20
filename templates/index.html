@@ -15,11 +15,11 @@
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="#" class="nav-item">Home</a></li>
-                <li><a href="#" class="nav-item">All Doctors</a></li>
-                <li><a href="#" class="nav-item">About</a></li>
-                <li><a href="#" class="nav-item">Contact</a></li>
-                <li><a href="#" class="account-btn">Create account</a></li>
+                <li><a href="{% url 'home' %}" class="nav-item">Home</a></li>
+                <li><a href="{% url 'doctors' %}" class="nav-item">All Doctors</a></li>
+                <li><a href="{% url 'about' %}" class="nav-item">About</a></li>
+                <li><a href="{% url 'contact' %}" class="nav-item">Contact</a></li>
+                <li><a href="{% url 'register' %}"  class="account-btn">Create account</a></li>
             </ul>
         </nav>
     </header>
@@ -28,7 +28,7 @@
         <div class="hero-content">
             <h2 class="animate-text">Book Appointment With Trusted Doctors</h2>
             <p class="animate-text">Simply browse through our extensive list of trusted doctors, schedule your appointment hassle-free.</p>
-            <a href="#" class="appointment-btn animate-button">Book appointment</a>
+            <a href="{% url 'appoinment' %}" class="appointment-btn animate-button">Book appointment</a>
         </div>
         <div class="hero-image">
             <img src="{% static 'img/hero2.png' %}" alt="Doctors" class="animate-image">

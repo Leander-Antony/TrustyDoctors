@@ -6,6 +6,18 @@ from django.contrib import messages
 def home(request):
     return render(request, 'index.html')
 
+def all_doctors(request):
+    return render(request, 'doctors.html')
+
+def appoinment(request):
+    return render(request, 'appion.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def contact(request):
+    return render(request, 'contact.html')
+
 
 def register(request):
     if request.method == 'POST':

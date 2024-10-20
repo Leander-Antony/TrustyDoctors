@@ -1,10 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor Booking</title>
-    <link rel="stylesheet" href="appion.css">
+    <link rel="stylesheet" href="{% static 'css/appion.css' %}">
+    <style>
+        .date, .time {
+            background-color: #eee;
+            padding: 10px 15px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .date.active, .time.active {
+            background-color: #5865F2;
+            color: white;
+        }
+        </style>
+        
 </head>
 <body>
     <div class="container">
@@ -12,19 +30,17 @@
             <h1 class="logo">TrustyDoctors</h1>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">All Doctors</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                   
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'doctors' %}">All Doctors</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
                 </ul>
             </nav>
-            <button class="create-account-btn">Create account</button>
         </header>
 
         <div class="doctor-card">
             <div class="doctor-image">
-                <img src="doctor2.jpg" alt="Dr. Richard James">
+                <img src="{% static 'img/doctor2.jpg' %}" alt="Dr. Richard James">
             </div>
             <div class="doctor-info">
                 <h2>Dr. Richard James <span class="verified-badge">✔</span></h2>
@@ -44,13 +60,13 @@
                             <button class="date">FRI 25</button>
                         </div>
                         <div class="time-selector">
-                            <button class="time-slot">11:30 am</button>
-                            <button class="time-slot">12:30 pm</button>
-                            <button class="time-slot">01:00 pm</button>
-                            <button class="time-slot">01:30 pm</button>
-                            <button class="time-slot">02:00 pm</button>
-                            <button class="time-slot">02:30 pm</button>
-                            <button class="time-slot">03:00 pm</button>
+                            <button class="time active">11:30 am</button>
+                            <button class="time">12:30 pm</button>
+                            <button class="time">01:00 pm</button>
+                            <button class="time">01:30 pm</button>
+                            <button class="time">02:00 pm</button>
+                            <button class="time">02:30 pm</button>
+                            <button class="time">03:00 pm</button>
                         </div>
                     </div>
                     <button class="book-btn">Book an appointment</button>
@@ -59,11 +75,10 @@
         </div>
     </div>
 
-    
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <h2>Prescripto</h2>
+                <h2>TrustyDoctors</h2>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
             </div>
             <div class="footer-links">
@@ -83,6 +98,6 @@
         </div>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script src="{% static 'js/appion.js' %}"></script>
 </body>
 </html>

@@ -14,13 +14,12 @@
         <h1 class="logo">TrustyDoctors</h1>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">All Doctors</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'doctors' %}">All Doctors</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
             </ul>
         </nav>
-        <button class="create-account-btn">Create account</button>
     </header>
 
     <!-- Main Section - Create Account Form -->
@@ -45,7 +44,7 @@
             <input type="password" id="password" placeholder="Password" name="password2" required>
             
             <button type="submit">Create account</button>
-            <p class="login-link">Already have an account? <a href="login.html">Login here</a></p>
+            <p class="login-link">Already have an account? <a href="{% url 'login' %}">Login here</a></p>
         </form>
     </div>
 

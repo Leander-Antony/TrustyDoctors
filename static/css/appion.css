@@ -106,20 +106,6 @@ nav ul li a, .admin-btn {
     margin-bottom: 10px;
 }
 
-.date, .time-slot {
-    background-color: #eee;
-    padding: 10px 15px;
-    margin-right: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.date.active {
-    background-color: #5865F2;
-    color: white;
-}
-
 .book-btn {
     background-color: #5865F2;
     color: white;

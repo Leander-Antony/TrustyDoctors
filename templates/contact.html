@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prescripto - Contact Us</title>
-    <link rel="stylesheet" href="contact.css">
+    <title>TrustyDoctors - Contact Us</title>
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
 </head>
 <body>
     <div class="container">
@@ -14,20 +15,19 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">All Doctors</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'doctors' %}">All Doctors</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
                 </ul>
-               
             </nav>
-            <button class="create-account-btn">Create account</button>
+            <!-- <a href="{% url 'register' %}" class="create-account-btn">Create account</a> -->
         </header>
 
         <section class="contact-section">
             <h2>Contact <span class="highlight">Us</span></h2>
             <div class="contact-content">
-                <img src="contact.jpg" alt="Doctor Image">
+                <img src="{% static 'img/contact.jpg' %}" alt="Doctor Image">
                 <div class="contact-info">
                     <h3>Our Office</h3>
                     <p>00000 Willms Station</p>
@@ -35,7 +35,7 @@
                     <p>Tel: (000) 000-0000</p>
                     <p>Email: greatstackdev@gmail.com</p>
 
-                    <h3>Careers at Prescripto</h3>
+                    <h3>Careers at TrustyDoctors</h3>
                     <p>Learn more about our teams and job openings.</p>
                     <button class="explore-jobs-btn">Explore Jobs</button>
                 </div>
@@ -45,7 +45,7 @@
         <footer>
             <div class="footer-content">
                 <div class="footer-logo">
-                    <h2>Prescripto</h2>
+                    <h2>TrustyDoctors</h2>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
                 </div>
                 <div class="footer-links">
@@ -65,6 +65,6 @@
             </div>
         </footer>
     </div>
-    <script src="script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
