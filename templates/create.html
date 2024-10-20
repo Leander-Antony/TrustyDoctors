@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="create.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1 class="logo">TrustyDoctors</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">All Doctors</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="create-account-btn">Create account</button>
+    </header>
+
+    <!-- Main Section - Create Account Form -->
+    <div class="form-container">
+        <form class="form-box" id="createAccountForm">
+            <h2>Create Account</h2>
+            <p>Please sign up to book an appointment</p>
+            
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="Full Name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Email" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Password" required>
+            
+            <button type="submit">Create account</button>
+            <p class="login-link">Already have an account? <a href="login.html">Login here</a></p>
+        </form>
+    </div>
+
+</body>
+</html>
