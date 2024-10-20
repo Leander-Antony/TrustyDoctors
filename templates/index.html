@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrustyDoctors - Book Your Appointment</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 </head>
 <body>
@@ -30,7 +31,7 @@
             <a href="#" class="appointment-btn animate-button">Book appointment</a>
         </div>
         <div class="hero-image">
-            <img src="hero2.png" alt="Doctors" class="animate-image">
+            <img src="{% static 'img/hero2.png' %}" alt="Doctors" class="animate-image">
         </div>
     </section>
 
@@ -39,23 +40,23 @@
         <p class="animate-text">Simply browse through our extensive list of trusted doctors, schedule your appointment hassle-free.</p>
         <div class="speciality-icons">
             <div class="icon-card animate-card">
-                <img src="gn.png" alt="General physician">
+                <img src="{% static 'img/gn.png' %}" alt="General physician">
                 <p>General physician</p>
             </div>
             <div class="icon-card animate-card">
-                <img src="gn2.jpg" alt="Gynecologist">
+                <img src="{% static 'img/gn2.jpg' %}" alt="Gynecologist">
                 <p>Gynecologist</p>
             </div>
             <div class="icon-card animate-card">
-                <img src="gn3.png" alt="Pediatricians">
+                <img src="{% static 'img/gn3.png' %}" alt="Pediatricians">
                 <p>Pediatricians</p>
             </div>
             <div class="icon-card animate-card">
-                <img src="gn4.jpg" alt="Neurologist">
+                <img src="{% static 'img/gn4.jpg' %}" alt="Neurologist">
                 <p>Neurologist</p>
             </div>
             <div class="icon-card animate-card">
-                <img src="gn5.jpg" alt="Gastroenterologist">
+                <img src="{% static 'img/gn5.jpg' %}" alt="Gastroenterologist">
                 <p>Gastroenterologist</p>
             </div>
         </div>
@@ -66,37 +67,37 @@
         <p class="animate-text">Simply browse through our extensive list of trusted doctors.</p>
         <div class="doctors">
             <div class="doctor-card animate-card">
-                <img src="dr1.jpg" alt="Dr. Richard James">
+                <img src="{% static 'img/dr1.jpg' %}" alt="Dr. Richard James">
                 <div class="availability"><span class="dot"></span> Available</div>
                 <h4>Dr. Richard James</h4>
                 <p>General physician</p>
             </div>
             <div class="doctor-card animate-card">
-                <img src="doctor2.jpg" alt="Dr. Emily Larson">
+                <img src="{% static 'img/doctor2.jpg' %}" alt="Dr. Emily Larson">
                 <div class="availability"><span class="dot"></span> Available</div>
                 <h4>Dr. Emily Larson</h4>
                 <p>Gynecologist</p>
             </div>
             <div class="doctor-card animate-card">
-                <img src="doctor3.jpg" alt="Dr. Sarah Patel">
+                <img src="{% static 'img/doctor3.jpg' %}" alt="Dr. Sarah Patel">
                 <div class="availability"><span class="dot"></span> Available</div>
                 <h4>Dr. Sarah Patel</h4>
                 <p>Dermatologist</p>
             </div>
             <div class="doctor-card animate-card">
-                <img src="doctor4.jpg" alt="Dr. Christopher Lee">
+                <img src="{% static 'img/doctor4.jpg' %}" alt="Dr. Christopher Lee">
                 <div class="availability"><span class="dot"></span> Available</div>
                 <h4>Dr. Christopher Lee</h4>
                 <p>Pediatricians</p>
             </div>
             <div class="doctor-card animate-card">
-                <img src="doctor5.jpg" alt="Dr. Jennifer Garcia">
+                <img src="{% static 'img/doctor5.jpg' %}" alt="Dr. Jennifer Garcia">
                 <div class="availability"><span class="dot"></span> Available</div>
                 <h4>Dr. Jennifer Garcia</h4>
                 <p>Neurologist</p>
             </div>
             <div class="doctor-card animate-card">
-                <img src="doctor6.jpg" alt="Dr. Andrew Williams">
+                <img src="{% static 'img/doctor6.jpg' %}" alt="Dr. Andrew Williams">
                 <div class="availability"><span class="dot"></span> Available</div>
                 <h4>Dr. Andrew Williams</h4>
                 <p>Gastroenterologist</p>
@@ -125,7 +126,6 @@
             </div>
         </div>
     </footer>
-</div>
-    <script src="script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
