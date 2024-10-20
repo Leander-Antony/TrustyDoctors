@@ -25,41 +25,43 @@
 
         <section class="doctor-listing">
             <aside>
-                <button class="filter-btn">General physician</button>
-                <button class="filter-btn">Gynecologist</button>
-                <button class="filter-btn">Dermatologist</button>
-                <button class="filter-btn">Pediatricians</button>
-                <button class="filter-btn">Neurologist</button>
-                <button class="filter-btn">Gastroenterologist</button>
+                <button class="filter-btn" data-specialty="All">All</button>
+                <button class="filter-btn" data-specialty="General physician">General physician</button>
+                <button class="filter-btn" data-specialty="Gynecologist">Gynecologist</button>
+                <button class="filter-btn" data-specialty="Dermatologist">Dermatologist</button>
+                <button class="filter-btn" data-specialty="Pediatricians">Pediatricians</button>
+                <button class="filter-btn" data-specialty="Neurologist">Neurologist</button>
+                <button class="filter-btn" data-specialty="Gastroenterologist">Gastroenterologist</button>
             </aside>
+            
 
             <div class="doctor-cards">
                 <!-- Example doctor card -->
-                <div class="doctor-card">
+                <div class="doctor-card" data-specialty="General physician" data-id="1">
                     <img src="{% static 'img/dr1.jpg' %}" alt="Doctor">
                     <h3>Dr. Richard James</h3>
                     <p>General physician</p>
                     <p class="status"><span class="status-dot"></span> Available</p>
                 </div>
-                <div class="doctor-card">
+                <div class="doctor-card" data-specialty="Gynecologist" data-id="2">
                     <img src="{% static 'img/doctor2.jpg' %}" alt="Doctor">
                     <h3>Dr. Emily Larson</h3>
                     <p>Gynecologist</p>
                     <p class="status"><span class="status-dot"></span> Available</p>
                 </div>
-                <div class="doctor-card">
+                <div class="doctor-card" data-specialty="Pediatricians" data-id="3">
                     <img src="{% static 'img/doctor3.jpg' %}" alt="Doctor">
                     <h3>Dr. Christopher Lee</h3>
                     <p>Pediatricians</p>
                     <p class="status"><span class="status-dot"></span> Available</p>
                 </div>
-                <div class="doctor-card">
+                <div class="doctor-card" data-specialty="Gastroenterologist" data-id="4">
                     <img src="{% static 'img/doctor4.jpg' %}" alt="Doctor">
                     <h3>Dr. Seetha</h3>
                     <p>Gastroenterologist</p>
                     <p class="status"><span class="status-dot"></span> Available</p>
                 </div>
-                <div class="doctor-card">
+                <div class="doctor-card" data-specialty="Neurologist" data-id="5" >
                     <img src="{% static 'img/doctor5.jpg' %}" alt="Doctor">
                     <h3>Dr. Jennifer Garcia</h3>
                     <p>Neurologist</p>
@@ -67,6 +69,7 @@
                 </div>
                 <!-- Add more doctor cards as needed -->
             </div>
+            
         </section>
     </div>
     <footer>
@@ -91,6 +94,17 @@
             </div>
         </div>
     </footer>
+    <script>
+        const csrfToken = "{{ csrf_token }}"; // Make sure this is rendered in the HTML
+    </script>
     <script src="{% static 'js/script.js' %}"></script>
+    <script>
+        document.querySelectorAll('.doctor-card').forEach(card => {
+        card.addEventListener('click', function() {
+            window.location.href = "{% url 'appointment' %}"; // Redirect to the appointment page
+        });
+    });
+    </script>
+    
 </body>
 </html>

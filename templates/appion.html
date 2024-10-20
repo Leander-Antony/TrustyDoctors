@@ -21,8 +21,15 @@
             background-color: #5865F2;
             color: white;
         }
-        </style>
-        
+
+        .appointment-details {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -51,27 +58,35 @@
                     <h3>Booking slots</h3>
                     <div class="slots">
                         <div class="date-selector">
-                            <button class="date active">SAT 19</button>
-                            <button class="date">SUN 20</button>
-                            <button class="date">MON 21</button>
-                            <button class="date">TUE 22</button>
-                            <button class="date">WED 23</button>
-                            <button class="date">THU 24</button>
-                            <button class="date">FRI 25</button>
+                            <button class="date active" data-date="SAT 19">SAT 19</button>
+                            <button class="date" data-date="SUN 20">SUN 20</button>
+                            <button class="date" data-date="MON 21">MON 21</button>
+                            <button class="date" data-date="TUE 22">TUE 22</button>
+                            <button class="date" data-date="WED 23">WED 23</button>
+                            <button class="date" data-date="THU 24">THU 24</button>
+                            <button class="date" data-date="FRI 25">FRI 25</button>
                         </div>
                         <div class="time-selector">
-                            <button class="time active">11:30 am</button>
-                            <button class="time">12:30 pm</button>
-                            <button class="time">01:00 pm</button>
-                            <button class="time">01:30 pm</button>
-                            <button class="time">02:00 pm</button>
-                            <button class="time">02:30 pm</button>
-                            <button class="time">03:00 pm</button>
+                            <button class="time active" data-time="11:30 am">11:30 am</button>
+                            <button class="time" data-time="12:30 pm">12:30 pm</button>
+                            <button class="time" data-time="01:00 pm">01:00 pm</button>
+                            <button class="time" data-time="01:30 pm">01:30 pm</button>
+                            <button class="time" data-time="02:00 pm">02:00 pm</button>
+                            <button class="time" data-time="02:30 pm">02:30 pm</button>
+                            <button class="time" data-time="03:00 pm">03:00 pm</button>
                         </div>
                     </div>
                     <button class="book-btn">Book an appointment</button>
                 </div>
             </div>
+        </div>
+
+        <div class="appointment-details" id="appointment-details" style="display: none;">
+            <h3>Appointment Details</h3>
+            <p><strong>Doctor:</strong> <span id="doctor-name"></span></p>
+            <p><strong>Specialty:</strong> <span id="doctor-specialty"></span></p>
+            <p><strong>Date:</strong> <span id="appointment-date"></span></p>
+            <p><strong>Time:</strong> <span id="appointment-time"></span></p>
         </div>
     </div>
 
@@ -79,7 +94,7 @@
         <div class="footer-content">
             <div class="footer-logo">
                 <h2>TrustyDoctors</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
             </div>
             <div class="footer-links">
                 <h4>Company</h4>
@@ -99,5 +114,66 @@
     </footer>
 
     <script src="{% static 'js/appion.js' %}"></script>
+    <script>
+        document.querySelector('.book-btn').addEventListener('click', function() {
+            // Get the selected date and time
+            const activeDate = document.querySelector('.date.active').dataset.date;
+            const activeTime = document.querySelector('.time.active').dataset.time;
+
+            // Doctor details
+            const doctorDetails = {
+                id: 'doctor_id_here',  // Replace with actual doctor ID
+                name: 'Dr. Richard James',
+                specialty: 'General physician'
+            };
+
+            // Send appointment details to the server
+            fetch('{% url "appointment" %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: JSON.stringify({
+                    ...doctorDetails,
+                    date: activeDate,
+                    time: activeTime
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    // Update HTML with appointment details
+                    document.getElementById('doctor-name').innerText = data.details.doctor_name;
+                    document.getElementById('doctor-specialty').innerText = data.details.doctor_specialty;
+                    document.getElementById('appointment-date').innerText = data.details.appointment_date;
+                    document.getElementById('appointment-time').innerText = data.details.appointment_time;
+
+                    // Show the appointment details section
+                    document.getElementById('appointment-details').style.display = 'block';
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+
+        // Date and time button functionality
+        document.querySelectorAll('.date').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.date').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        document.querySelectorAll('.time').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.time').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
